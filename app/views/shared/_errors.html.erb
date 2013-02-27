@@ -1,0 +1,14 @@
+<% if model.errors.any? %>
+  <section id="error_explanation">
+    <div class="alert alert-error">
+      The form contains <%= pluralize(model.errors.count, "error") %>.
+    </div>
+    <ul>
+    <% model.errors.full_messages.each do |msg| %>
+    	<% unless msg.include? 'digest' %>
+    		<li> <%= msg %> </li> 
+    	<% end %>
+    <% end %>
+    </ul>
+  </section>
+<% end %>

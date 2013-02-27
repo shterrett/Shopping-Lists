@@ -1,0 +1,20 @@
+<section id="login">
+  <header>
+    <h1>Login</h1>
+  </header>
+
+  <%= form_for :session, url: sessions_path do |f| %>
+    <label>
+      <strong>Email Address</strong>
+      <%= f.email_field :email %>
+    </label>
+    <label>
+      <strong>Password</strong>
+      <%= f.password_field :password %>
+    </label>
+    
+    <%= f.submit %>
+  
+  <% end %>
+  
+</section>
