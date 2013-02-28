@@ -4,6 +4,9 @@ ShoppingListApp::Application.routes.draw do
   match '/signout' => "sessions#destroy"
   resources :sessions
   resources :users
+  resources :shopping_lists
+  resources :shopping_list_items
+
   
   # The priority is based upon order of creation:
   # first created -> highest priority.

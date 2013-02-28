@@ -1,0 +1,2 @@
+<% 
+<span class='title'><%= name %></span> | <%= quantity %> <input type='checkbox' class='checkbox' <%= purchased == true ? 'checked' : '' %>/><span class='delete-item'>X</span>
