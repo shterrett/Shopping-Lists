@@ -1,0 +1,5 @@
+<form id="new-item-form">
+	<input id="new-item" type="text" />
+	<button id="add-item">Add Item</button>
+</form>
+<button id="done">Done</button>

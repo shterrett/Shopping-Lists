@@ -1,2 +1,5 @@
-<% 
-<span class='title'><%= name %></span> | <%= quantity %> <input type='checkbox' class='checkbox' <%= purchased == true ? 'checked' : '' %>/><span class='delete-item'>X</span>
+<% for item in @shopping_list_items.models: %>
+
+<li id="<%= item.get('name') %>"><span class="title"><%= item.get("name") %></span> | <%= item.get('quantity') %> <input type="checkbox" class="checkbox" <%= item.get('purchased') == true ? "checked" : "" %>/><span class="delete-item">X</span></li>
+  
+<% end %>

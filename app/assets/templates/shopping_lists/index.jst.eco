@@ -1,0 +1,10 @@
+<form id="new-list-form">
+	<input id="new-list" type="text" />
+	<button id="add-list">Create New Shopping List</button>
+</form>
+<ul id="shopping-lists">
+  <% for item in @shopping_lists.models: %>
+    <span class="name">Name: <%= item.get("name") %></span> | <span class="delete-list">X</span>
+  <% end %>
+</ul>
+<section id="single-shopping-list"></section>

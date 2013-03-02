@@ -1,6 +1,6 @@
 class ShoppingListApp.Collections.ShoppingLists extends Backbone.Collection
-
+  url: '/shopping_lists'
   model: ShoppingListApp.Models.ShoppingList
-  addList: function(item_name)
-  	var shoppingList = new ShoppingList({ name: item_name })
+  addList: (item_name) ->
+  	shoppingList = new ShoppingList({ name: item_name })
   	this.add(shoppingList)

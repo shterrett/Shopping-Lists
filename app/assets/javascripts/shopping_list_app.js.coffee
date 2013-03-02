@@ -6,4 +6,4 @@ window.ShoppingListApp =
   initialize: -> alert 'Hello from Backbone!'
 
 $(document).ready ->
-  ShoppingListApp.initialize()
+

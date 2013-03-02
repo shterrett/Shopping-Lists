@@ -11,15 +11,16 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130227025043) do
+ActiveRecord::Schema.define(:version => 20130302195401) do
 
   create_table "shopping_list_items", :force => true do |t|
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
     t.string   "name"
     t.integer  "quantity"
     t.boolean  "purchased"
     t.boolean  "persistent"
+    t.integer  "shopping_list_id"
   end
 
   create_table "shopping_lists", :force => true do |t|
@@ -27,6 +28,7 @@ ActiveRecord::Schema.define(:version => 20130227025043) do
     t.datetime "updated_at",  :null => false
     t.string   "name"
     t.date     "target_date"
+    t.integer  "user_id"
   end
 
   create_table "users", :force => true do |t|

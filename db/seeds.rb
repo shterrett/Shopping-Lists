@@ -5,3 +5,8 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+user = User.find(1)
+lists = ["Grocery", "Clothes", "Computers", "Books", "Movies"]
+lists.each do |list|
+  user.shopping_lists.create({ name: list })
+end
