@@ -1,6 +1,6 @@
 class ShoppingListApp.Routers.ShoppingLists extends Backbone.Router
   routes:
-    '': 'index'          
+    '': 'index'  
   initialize: ->
     @collection = new ShoppingListApp.Collections.ShoppingLists()
   index: ->
@@ -10,4 +10,3 @@ class ShoppingListApp.Routers.ShoppingLists extends Backbone.Router
         content = view.render()
         $('#shopping-lists').html(content)
     )
-    

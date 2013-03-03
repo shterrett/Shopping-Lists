@@ -1,5 +1,5 @@
 <% for item in @shopping_list_items.models: %>
 
-<li id="<%= item.get('name') %>"><span class="title"><%= item.get("name") %></span> | <%= item.get('quantity') %> <input type="checkbox" class="checkbox" <%= item.get('purchased') == true ? "checked" : "" %>/><span class="delete-item">X</span></li>
+<li id="<%= item.get('id') %>"><span class="title"><%= item.get("name") %></span> | <%= item.get('quantity') %> <input type="checkbox" class="checkbox" <%= item.get('purchased') == true ? "checked" : "" %>/><span class="delete-item">X</span></li>
   
 <% end %>

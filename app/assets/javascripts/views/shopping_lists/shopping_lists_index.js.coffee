@@ -8,7 +8,6 @@ class ShoppingListApp.Views.ShoppingListsIndex extends Backbone.View
     @collection.on('change', this.render, this)
     @collection.on('remove', this.render, this)
   render: ->
-    attr = this.collection.toJSON()
     $(@el).html(@template(shopping_lists: @collection))
   events:
     "click .name": "displayList"
