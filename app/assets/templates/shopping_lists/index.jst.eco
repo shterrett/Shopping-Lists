@@ -4,7 +4,9 @@
 </form>
 <ul id="shopping-lists">
   <% for item in @shopping_lists.models: %>
-    <span class="name">Name: <%= item.get("name") %></span> | <span class="delete-list">X</span>
+    <li id="<%= item.get('id') %>">
+      <span class="name">Name: <%= item.get("name") %></span> | <span class="delete-list">X</span>
+    </li>
   <% end %>
 </ul>
 <section id="single-shopping-list"></section>

@@ -3,7 +3,9 @@ window.ShoppingListApp =
   Collections: {}
   Views: {}
   Routers: {}
-  initialize: -> alert 'Hello from Backbone!'
+  init: -> 
+          new ShoppingListApp.Routers.ShoppingLists()
+          Backbone.history.start()
 
 $(document).ready ->
-
+  ShoppingListApp.init()

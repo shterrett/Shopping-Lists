@@ -2,11 +2,11 @@ class ShoppingListsController < ApplicationController
   respond_to :json
   
   def create
-    respond_with ShoppingList.create(params[:shopping_list])
+    respond_with current_user.shopping_lists.create(params[:shopping_list])
   end      
   
   def update
-    respond_with SHoppingList.update(params[:id], params[:shopping_list])
+    respond_with ShoppingList.update(params[:id], params[:shopping_list])
   end
   
   def show

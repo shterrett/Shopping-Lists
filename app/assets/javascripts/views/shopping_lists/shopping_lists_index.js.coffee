@@ -1,30 +1,38 @@
 class ShoppingListApp.Views.ShoppingListsIndex extends Backbone.View
   template: JST['shopping_lists/index']
-	id: "shopping-list-collection"
-	class: "all-shopping-lists"
-	initialize: ->
-		this.collection.on('change', this.render, this)
-	render: ->
-		attr = this.collection.toJSON()
-		this.$el.html(this.template(attr))
+  id: "shopping-list-collection"
+  class: "all-shopping-lists"
+  tagname: "section"
+  initialize: ->
+    this.collection.on('add', this.render, this)
+    @collection.on('change', this.render, this)
+    @collection.on('remove', this.render, this)
+  render: ->
+    attr = this.collection.toJSON()
+    $(@el).html(@template(shopping_lists: @collection))
   events:
     "click .name": "displayList"
-		"click .delete-list": "deleteShoppingList"
-		"click #add-list": "addNewList"
-	displayList: e ->
-		shoppingList = new ShoppingListDetailView({ model: this.model })
-		shoppingList.render()
-		$('#single-shopping-list').html(shoppingList.el)
-		$('#single-shopping-list').append('<section id="item-detail"></section>')
-	deleteShoppingList: e ->
-		this.model.destroy()
-	addNewList: e ->
-		e.preventDefault()
-		this.collection.addList($('#new-list').val())
-		$('#new-list').val("")
-	addOne: shoppingList ->
+    "click .delete-list": "deleteShoppingList"
+    "click #add-list": "addNewList"
+  displayList: (e)->
+    model = @getModelFromClick(e)
+    shoppingList = new ShoppingListApp.Views.ShoppingListsShow({ model: model })
+    shoppingList.render()
+    $('#single-shopping-list').html(shoppingList.el)
+    $('#single-shopping-list').append('<section id="item-detail"></section>')
+  deleteShoppingList: (e)->
+    model = @getModelFromClick(e)
+    model.destroy()
+  addNewList: (e)->
+    e.preventDefault()
+    this.collection.addList($('#new-list').val())
+    $('#new-list').val("")
+  addOne: (shoppingList)->
     shoppingListView = new ShoppingListView({ model: shoppingList })
-		shoppingListView.render()
-		$('#shopping-lists').append(shoppingListView.el)
+    shoppingListView.render()
+    $('#shopping-lists').append(shoppingListView.el)
   removeListView: ->
-		this.$el.remove()
+    this.$el.remove()
+  getModelFromClick: (event)->
+    model_id = $(event.currentTarget.parentElement).attr("id")
+    model = @collection.get(model_id)

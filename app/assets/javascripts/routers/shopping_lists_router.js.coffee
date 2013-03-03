@@ -1,13 +1,13 @@
 class ShoppingListApp.Routers.ShoppingLists extends Backbone.Router
   routes:
-    'users/:id': 'index'
-    'entries/:id': 'show'
-              
+    '': 'index'          
   initialize: ->
-  
+    @collection = new ShoppingListApp.Collections.ShoppingLists()
   index: ->
-    view = new 
-    $('').html(view.render().el)
-
-  show: (id) ->
+    @collection.fetch(
+      success: (@collection)->
+        view = new ShoppingListApp.Views.ShoppingListsIndex({ collection: @collection })
+        content = view.render()
+        $('#shopping-lists').html(content)
+    )
     

@@ -14,6 +14,7 @@ class ShoppingListItem < ActiveRecord::Base
       self.quantity ||= 1
       self.purchased ||= false
       self.persistent ||= false
+      return true
     end
 
 end
