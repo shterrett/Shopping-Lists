@@ -6,9 +6,9 @@ class ShoppingListApp.Models.ShoppingList extends Backbone.Model
     this.list.url = '/shopping_lists/' + this.get("id") + '/shopping_list_items'
   addItem: (item)->
     itemList = this.list
+    item.set("url", itemList.url)
     itemList.add(item)
-    console.log itemList.url
-    itemList.sync()
+    item.save()
   finishedWithList: ->
     itemList = this.get("list")
     itemList.resetCollection()
