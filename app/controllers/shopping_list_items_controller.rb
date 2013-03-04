@@ -3,8 +3,7 @@ class ShoppingListItemsController < ApplicationController
   
   def create
     list = ShoppingList.find_by_id(params[:shopping_list_id])
-    item_hash = { name: params[:name], quantity: params[:quantity], purchased: params[:purchased], persistent: params[:persistent] }
-    respond_with list.shopping_list_items.create(item_hash)
+    respond_with list.shopping_list_items.create(params[:shopping_list_item])
   end
   
   def update
