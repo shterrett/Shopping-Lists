@@ -5,7 +5,7 @@ class ShoppingListApp.Views.ShoppingListItemsIndex extends Backbone.View
   collection: ShoppingListApp.Collections.ShoppingListItems
   initialize: ->
     this.collection.on("add", this.render, this)
-    #this.collection.on("change", this.render, this)
+    this.collection.on("change", this.render, this)
     this.collection.on("destroy", this.render, this)
   render: ->
     $(@el).html(@template(shopping_list_items: @collection ))

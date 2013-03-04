@@ -15,6 +15,7 @@ class ShoppingListApp.Views.ShoppingListsIndex extends Backbone.View
     "click #add-list": "addNewList"
   displayList: (e)->
     $('#shopping-list-items').html("")
+    $('#item-detail').html("")
     model = @getModelFromClick(e)
     shoppingList = new ShoppingListApp.Views.ShoppingListsShow({ model: model })
     shoppingList.render()

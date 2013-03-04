@@ -10,6 +10,6 @@ class ShoppingListApp.Models.ShoppingList extends Backbone.Model
     itemList.add(item)
     item.save()
   finishedWithList: ->
-    itemList = this.get("list")
+    itemList = this.list
     itemList.resetCollection()
 

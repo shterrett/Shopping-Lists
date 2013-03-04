@@ -3,7 +3,7 @@ class ShoppingListApp.Views.ShoppingListItemsShow extends Backbone.View
   template: JST['shopping_list_items/show']
   model: ShoppingListApp.Models.ShoppingListItem
   id: ->
-    return this.model.get('name') + "-detail"
+    return this.model.get('id')
   initialize: ->
     this.model.on('change', this.render, this)
     this.model.on('destroy', this.closeDetail, this)

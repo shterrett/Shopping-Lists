@@ -19,4 +19,5 @@ class ShoppingListApp.Models.ShoppingListItem extends Backbone.Model
       this.trigger('change')
   updateQuantity: (qty) ->
     this.set { quantity: qty }
+    this.save()
     
