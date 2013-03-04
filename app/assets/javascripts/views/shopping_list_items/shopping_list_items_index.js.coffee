@@ -5,7 +5,7 @@ class ShoppingListApp.Views.ShoppingListItemsIndex extends Backbone.View
   collection: ShoppingListApp.Collections.ShoppingListItems
   initialize: ->
     this.collection.on("add", this.render, this)
-    this.collection.on("change", this.render, this)
+    #this.collection.on("change", this.render, this)
     this.collection.on("destroy", this.render, this)
   render: ->
     $(@el).html(@template(shopping_list_items: @collection ))
@@ -13,14 +13,15 @@ class ShoppingListApp.Views.ShoppingListItemsIndex extends Backbone.View
     "click .checkbox" : "markPurchased",
     "click .title" : "openDetail",
     "click .delete-item": "destroyItem"
-  markPurchased: ->
-    cbox = this.$el.children("input")
-    if (this.$el.children("input:checked").length == 0)
-      this.$el.removeClass("purchased")
-      this.model.togglePurchased()
+  markPurchased: (e)->
+    cbox = e.target
+    model = this.getModelFromClick(e)
+    if (cbox.checked)
+      $(cbox.parentElement).addClass("purchased")
+      model.togglePurchased()
     else
-      this.$el.addClass("purchased")
-      this.model.togglePurchased()
+      $(cbox.parentElement).removeClass("purchased")
+      model.togglePurchased()
   openDetail: (e)->
     item = this.getModelFromClick(e)
     detail_view = new ShoppingListApp.Views.ShoppingListItemsShow( model: item )
@@ -32,5 +33,5 @@ class ShoppingListApp.Views.ShoppingListItemsIndex extends Backbone.View
   remove_item: ->
     this.$el.remove()
   getModelFromClick: (event)->
-    model_id = $(event.toElement.parentElement).attr("id")
+    model_id = $(event.target.parentElement).attr("id")
     model = @collection.get(model_id)

@@ -8,7 +8,7 @@ class ShoppingListItemsController < ApplicationController
   end
   
   def update
-    
+    respond_with ShoppingListItem.find_by_id(params[:id]).update_attributes(params[:shopping_list_item])
   end
   
   def index

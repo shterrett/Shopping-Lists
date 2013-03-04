@@ -4,17 +4,19 @@ class ShoppingListApp.Models.ShoppingListItem extends Backbone.Model
     quantity: 1
     purchased: false
     persistent: false
-  TogglePurchased: -> 
+  togglePurchased: -> 
     this.toggleAttribute("purchased")
-  TogglePersistent: -> 
+  togglePersistent: -> 
     this.toggleAttribute("persistent")
-  ToggleAttribute: (attr) -> 
+  toggleAttribute: (attr) -> 
     if (this.get(attr) == true)
       this.attributes[attr] = false
+      this.save()
       this.trigger('change')
     else 
       this.attributes[attr] = true
+      this.save()
       this.trigger('change')
-  UpdateQuantity: (qty) ->
+  updateQuantity: (qty) ->
     this.set { quantity: qty }
     
