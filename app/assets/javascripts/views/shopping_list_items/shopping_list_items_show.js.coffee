@@ -1,14 +1,14 @@
 class ShoppingListApp.Views.ShoppingListItemsShow extends Backbone.View
   tagName: "section"
   template: JST['shopping_list_items/show']
+  model: ShoppingListApp.Models.ShoppingListItem
   id: ->
     return this.model.get('name') + "-detail"
   initialize: ->
     this.model.on('change', this.render, this)
     this.model.on('destroy', this.closeDetail, this)
   render: ->
-    attr = this.model.toJSON()
-    this.$el.html(this.template(attr))
+    this.$el.html(@template({ item: @model }))
   events:
     "click #toggle-persistent": "togglePersistent"
     "click #toggle-purchased": "togglePurchased"

@@ -17,8 +17,7 @@ class ShoppingListApp.Views.ShoppingListsIndex extends Backbone.View
     model = @getModelFromClick(e)
     shoppingList = new ShoppingListApp.Views.ShoppingListsShow({ model: model })
     shoppingList.render()
-    $('#single-shopping-list').html(shoppingList.el)
-    $('#single-shopping-list').append('<section id="item-detail"></section>')
+    $('#shopping-list-items').prepend(shoppingList.el)
   deleteShoppingList: (e)->
     model = @getModelFromClick(e)
     model.destroy()
