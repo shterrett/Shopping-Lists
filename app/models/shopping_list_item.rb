@@ -1,6 +1,6 @@
 class ShoppingListItem < ActiveRecord::Base
   
-  attr_accessible :name, :quantity, :purchased, :persistent
+  attr_accessible :name, :quantity, :purchased, :persistent, :shopping_list_id
   
   belongs_to :shopping_list
   

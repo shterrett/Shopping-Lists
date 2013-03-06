@@ -4,9 +4,10 @@ class ShoppingListApp.Views.ShoppingListsIndex extends Backbone.View
   class: "all-shopping-lists"
   tagname: "section"
   initialize: ->
-    this.collection.on('add', this.render, this)
-    @collection.on('change', this.render, this)
-    @collection.on('remove', this.render, this)
+    @collection.on('add', this.updateCollection, this)
+    @collection.on('change', this.updateCollection, this)
+    @collection.on('remove', this.updateCollection, this)
+    @collection.on('sync', this.render, this)
   render: ->
     $(@el).html(@template(shopping_lists: @collection))
   events:
@@ -31,6 +32,8 @@ class ShoppingListApp.Views.ShoppingListsIndex extends Backbone.View
     shoppingListView = new ShoppingListView({ model: shoppingList })
     shoppingListView.render()
     $('#shopping-lists').append(shoppingListView.el)
+  updateCollection: ->
+    @collection.fetch()
   removeListView: ->
     this.$el.remove()
   getModelFromClick: (event)->
