@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  
+  before_filter :signed_in_user, only: [:show, :edit, :destroy]
   def new
     @user = User.new
   end
