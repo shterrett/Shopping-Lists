@@ -27,6 +27,7 @@ class ShoppingListApp.Views.ShoppingListItemsIndex extends Backbone.View
     detail_view = new ShoppingListApp.Views.ShoppingListItemsShow( model: item )
     detail_view.render()
     $('#item-detail').html(detail_view.el)
+    $('#item-detail').fadeIn()
   destroyItem: (e)->
     item = this.getModelFromClick(e)
     item.destroy()

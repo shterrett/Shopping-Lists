@@ -28,10 +28,6 @@ class ShoppingListApp.Views.ShoppingListsIndex extends Backbone.View
     e.preventDefault()
     this.collection.addList($('#new-list').val())
     $('#new-list').val("")
-  addOne: (shoppingList)->
-    shoppingListView = new ShoppingListView({ model: shoppingList })
-    shoppingListView.render()
-    $('#shopping-lists').append(shoppingListView.el)
   updateCollection: ->
     @collection.fetch()
   removeListView: ->

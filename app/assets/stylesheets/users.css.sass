@@ -1,3 +1,51 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+@import shared
+
+#show-user
+  section
+    padding: 0 2%
+  header
+    text-align: center
+    margin: 2% 0
+    padding: 1% 0
+  li
+    margin: 1% 0
+    padding: 1% 0
+    &:hover
+      background: $medgreen
+      box-shadow: 1px 1px 2px $darkgreen
+  .name, .title, .delete-item, .delete-list
+    cursor: pointer
+  .delete-item, .delete-list
+    float: right
+  #shopping-lists
+    float: left
+    width: 45%
+  #shopping-list-items
+    width: 30%
+    float: left
+    ul
+      width: 85%
+    input[type=checkbox]
+      display: inline-block
+      margin-right: 2%
+      float: left
+  #item-detail
+    position: fixed
+    height: 100%
+    width: 100%
+    background: transparentize($darkgreen, 0.4)
+    section
+      position: fixed
+      top: 25%
+      left: 35%
+      width: 30%
+      height: 40%
+      background: black
+      border-radius: 5px
+      color: $lightgreen
+      padding: 2%
+      text-align: center
+  

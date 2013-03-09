@@ -23,5 +23,8 @@ class ShoppingListApp.Views.ShoppingListItemsShow extends Backbone.View
     new_quantity = this.$el.find('input').val()
     this.model.updateQuantity(new_quantity)
   closeDetail: ->
-    this.$el.html("")
+    $('#item-detail').fadeOut( 
+      ->
+        $('#item-detail').html("")
+    )
   
