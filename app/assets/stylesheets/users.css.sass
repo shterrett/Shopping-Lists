@@ -22,24 +22,35 @@
     float: right
   #shopping-lists
     float: left
-    width: 45%
+    width: 30%
   #shopping-list-items
     width: 30%
     float: left
     ul
       width: 85%
+    li
+      width: 100%
+      &.purchased
+        background: $darkblue
+      span
+        display: inline-block
+        margin-left: 2%
+        &.title
+          margin-right: 2%
+          width: 70%
+          overflow: hidden
     input[type=checkbox]
       display: inline-block
-      margin-right: 2%
-      float: left
+      margin-right: 4%
   #item-detail
+    margin: 0
     position: fixed
     height: 100%
     width: 100%
     background: transparentize($darkgreen, 0.4)
     section
       position: fixed
-      top: 25%
+      top: 30%
       left: 35%
       width: 30%
       height: 40%
@@ -48,4 +59,20 @@
       color: $lightgreen
       padding: 2%
       text-align: center
+    .row
+      line-height: 150%
+      cursor: pointer
+    #detail-done
+      display: inline-block
+      border: 2px solid black
+      padding: 1%
+      &:hover
+        @include background-gradient($whitegreen, $lightgreen)
+        color: black
+    #quantity
+      cursor: default
+    input[type=text]
+      width: 2.5em
+      text-align: center
+      
   

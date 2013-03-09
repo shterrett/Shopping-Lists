@@ -1,5 +1,7 @@
-<div class='row' id='title'>Name: <%= @item.get("name") %></div>
-<div class='row'>Quantity: <input type='text' value='<%= @item.get("quantity") %>'/></div>
+<header>
+  <h1><%= @item.get("name") %></h1>
+</header>
+<div class='row'id='quantity'>Quantity: <input type='text' value='<%= @item.get("quantity") %>'/></div>
 <div class='row' id='toggle-persistent'>Persistent: <%= @item.get("persistent") %></div>
 <div class='row' id='toggle-purchased'>Purchased: <%= @item.get("purchased") %></div>
 <div class='row' id='detail-done'>Done</div>
