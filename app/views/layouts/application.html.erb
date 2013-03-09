@@ -15,6 +15,9 @@
           <div class="alert alert-<%= key %>"><%= value %></div>
         <% end %>
   </section>	
+  <% if current_user %>
+    <div id="logout"><%= link_to "Log Out", '/signout' %></div>
+  <% end %>
 
 <%= yield %>
 

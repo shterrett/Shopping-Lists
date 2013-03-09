@@ -31,11 +31,28 @@ li
 button, input[type=submit]
   @include background-gradient($medgreen, $darkgreen)
   font: $whitegreen
-  border: 2px solid $lightgreen
+  border: 2px solid $darkgreen
   cursor: pointer
   padding: 3%
   margin: 1%
   border-radius: 5px
   box-shadow: 2px 2px 4px black
   &:hover
-    @include background-gradient($darkgreen, $darkergreen)
+    @include background-gradient($lightgreen, $darkergreen)  
+#logout
+  float: right
+  position: absolute
+  top: 2%
+  right: 2%
+  display: inline-block
+  padding: 0 1%
+  border: 2px solid $darkergreen
+  border-radius: 3px
+  background: $darkgreen
+  &:hover
+    @include background-gradient($medgreen, $darkergreen)  
+  a
+    font-size: 60%
+    text-decoration: none
+    color: $whitegreen
+    

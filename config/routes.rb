@@ -2,6 +2,7 @@ ShoppingListApp::Application.routes.draw do
   
   root to: "sessions#new"
   match '/signout' => "sessions#destroy"
+  match '/login' => "sessions#new"
   resources :sessions
   resources :users
   resources :shopping_lists do
