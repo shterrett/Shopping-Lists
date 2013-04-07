@@ -21,3 +21,4 @@ class ShoppingListApp.Models.ShoppingListItem extends Backbone.Model
     this.set { quantity: qty }
     this.save()
     
+    
