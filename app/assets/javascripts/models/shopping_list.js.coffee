@@ -2,6 +2,7 @@ class ShoppingListApp.Models.ShoppingList extends Backbone.Model
   defaults: ->
     "name": "Shopping List"
   initialize: ->
+    this.url = '/shopping_lists/' + this.get("id")
     this.list = new ShoppingListApp.Collections.ShoppingListItems()
     this.list.url = '/shopping_lists/' + this.get("id") + '/shopping_list_items'
   addItem: (item)->

@@ -10,6 +10,10 @@ class ShoppingListItemsController < ApplicationController
     respond_with ShoppingListItem.find_by_id(params[:id]).update_attributes(params[:shopping_list_item])
   end
   
+  def show
+    respond_with ShoppingListItem.find_by_id(params[:id])
+  end
+  
   def index
     list = ShoppingList.find_by_id(params[:shopping_list_id])
     respond_with list.shopping_list_items
