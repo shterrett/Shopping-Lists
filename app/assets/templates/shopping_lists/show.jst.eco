@@ -2,4 +2,5 @@
 	<input id="new-item" type="text" />
 	<button id="add-item">Add Item</button>
 </form>
-<button id="done">Done</button>
+<a href="#"><button id="done">Done Shopping!</button></a>
+<a href="#" id="back-to-lists">Back to shopping lists</a>

@@ -1,6 +1,7 @@
 class ShoppingListApp.Routers.ShoppingLists extends Backbone.Router
   routes:
     '': 'index'
+    '#': 'index'
     'test': 'test'  
     'shopping_lists/:id': 'shopping_list_show'
     'shopping_lists/:id/item/:item_id': 'item_detail'

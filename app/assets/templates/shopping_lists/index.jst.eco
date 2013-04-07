@@ -5,7 +5,7 @@
 <ul id="shopping-list-ul">
   <% for item in @shopping_lists.models: %>
     <li id="<%= item.get('id') %>">
-      <a href="#/shopping_lists/<%=item.get('id')%>"<span class="name"><%= item.get("name") %></span> <span class="delete-list">X</span></a>
+      <a href="#/shopping_lists/<%=item.get('id')%>"<span class="name"><%= item.get("name") %></span></a><span class="delete-list">X</span>
     </li>
   <% end %>
 </ul>
