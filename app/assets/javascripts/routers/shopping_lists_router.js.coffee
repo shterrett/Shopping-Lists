@@ -8,6 +8,7 @@ class ShoppingListApp.Routers.ShoppingLists extends Backbone.Router
     @collection = new ShoppingListApp.Collections.ShoppingLists()
   index: ->
     $('#item-detail').hide()
+    $('#shopping-list-items').html("")
     @collection.fetch(
       success: (@collection)->
         view = new ShoppingListApp.Views.ShoppingListsIndex({ collection: @collection })
@@ -19,6 +20,8 @@ class ShoppingListApp.Routers.ShoppingLists extends Backbone.Router
     return ""
   shopping_list_show: (id)->
     @index()
+    $('#item-detail').html("")
+    $('#shopping-list-items').html("")
     @model = new ShoppingListApp.Models.ShoppingList({ id: id })
     @model.fetch(
       success: (@model)->
@@ -27,8 +30,6 @@ class ShoppingListApp.Routers.ShoppingLists extends Backbone.Router
         $('#shopping-list-items').prepend(view.el)
     )
   item_detail: (id, item_id)->
-    @index()
-    @shopping_list_show(id)
     @model = new ShoppingListApp.Models.ShoppingList({ id: id })
     @model.list.fetch(
       success: (shopping_list)->

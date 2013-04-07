@@ -11,7 +11,6 @@ class ShoppingListApp.Views.ShoppingListsIndex extends Backbone.View
   render: ->
     $(@el).html(@template(shopping_lists: @collection))
   events:
-    "click .name": "displayList"
     "click .delete-list": "deleteShoppingList"
     "click #add-list": "addNewList"
   displayList: (e)->

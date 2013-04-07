@@ -25,6 +25,6 @@ class ShoppingListApp.Views.ShoppingListItemsShow extends Backbone.View
   closeDetail: ->
     $('#item-detail').fadeOut( 
       ->
-        $('#item-detail').html("")
+        history.back()
     )
   

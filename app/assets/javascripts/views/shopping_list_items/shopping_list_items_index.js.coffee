@@ -11,7 +11,6 @@ class ShoppingListApp.Views.ShoppingListItemsIndex extends Backbone.View
     $(@el).html(@template(shopping_list_items: @collection ))
   events:
     "click .checkbox" : "markPurchased",
-    "click .title" : "openDetail",
     "click .delete-item": "destroyItem"
   markPurchased: (e)->
     cbox = e.target
