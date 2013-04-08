@@ -8,6 +8,7 @@ class ShoppingListApp.Routers.ShoppingLists extends Backbone.Router
   initialize: ->
     @collection = new ShoppingListApp.Collections.ShoppingLists()
   index: ->
+    $('#shopping-lists').show()
     $('#item-detail').hide()
     $('#shopping-list-items').html("")
     @collection.fetch(
@@ -20,7 +21,8 @@ class ShoppingListApp.Routers.ShoppingLists extends Backbone.Router
     alert("test")
     return ""
   shopping_list_show: (id)->
-    @index()
+    if window.matchMedia( "(max-width: 500px)" ).matches
+      $('#shopping-lists').hide()
     $('#item-detail').html("")
     $('#shopping-list-items').html("")
     @model = new ShoppingListApp.Models.ShoppingList({ id: id })
