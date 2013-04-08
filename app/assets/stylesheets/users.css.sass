@@ -22,10 +22,16 @@
     float: right
   #shopping-lists
     float: left
-    width: 30%
+    width: 42%
+    @media screen and (max-width: $max-width)
+      width: 85%
+      float: none
   #shopping-list-items
-    width: 30%
+    width: 42%
     float: left
+    @media screen and (max-width: $max-width)
+      width: 85%
+      float: none
     ul
       width: 85%
     li

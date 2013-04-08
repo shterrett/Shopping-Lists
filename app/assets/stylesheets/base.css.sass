@@ -51,6 +51,8 @@ button, input[type=submit]
   background: $darkgreen
   &:hover
     @include background-gradient($medgreen, $darkergreen)  
+  @media screen and (max-width: $max-width)
+    position: static
   a
     font-size: 60%
     text-decoration: none

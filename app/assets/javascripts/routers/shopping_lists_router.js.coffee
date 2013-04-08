@@ -21,7 +21,7 @@ class ShoppingListApp.Routers.ShoppingLists extends Backbone.Router
     alert("test")
     return ""
   shopping_list_show: (id)->
-    if window.matchMedia( "(max-width: 500px)" ).matches
+    if window.matchMedia( "(max-width: 412pt)" ).matches
       $('#shopping-lists').hide()
     $('#item-detail').html("")
     $('#shopping-list-items').html("")

@@ -9,6 +9,8 @@ $darkergreen: #188a00
 $lightblue: #5dd0c0
 $darkblue: #00685a
 
+$max-width: 450pt
+
 @mixin background_gradient($top_color, $bottom_color)
   background-image: linear-gradient(bottom, $bottom_color 5%, $top_color 59%)
   background-image: -o-linear-gradient(bottom, $bottom_color 5%, $top_color 59%)
@@ -16,3 +18,5 @@ $darkblue: #00685a
   background-image: -webkit-linear-gradient(bottom, $bottom_color 5%, $top_color 59%)
   background-image: -ms-linear-gradient(bottom, $bottom_color 5%, $top_color 59%)
   background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0.05, $bottom_color), color-stop(0.59, $top_color))
+  
+  
